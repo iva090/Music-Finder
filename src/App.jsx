@@ -1,20 +1,21 @@
 import './App.css';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Mainpage from './pages/Mainpage';
-import Favorites from './pages/favorites';
+import Favorites from './pages/Favorites';
+import Header from './components/headers/Header'
 
 function App() {
   return (
-    <div>
-      <Switch>
-        <Route path='/' exact>
-          <Mainpage />
-        </Route>
-        <Route path='/favorites'>
-          <Favorites />
-        </Route>
-      </Switch>
-    </div>
+    <>
+      <Header />
+      <div>
+        <Routes>
+          <Route path="/" element={<Mainpage />} />
+          <Route path="/favorites" element={<Favorites />} />
+        </Routes>
+      </div>
+    </>
+
   )
 }
 
