@@ -17,12 +17,12 @@ function Mainpage() {
       </p>
 
       <WebApi query={query} song={setSongs} />
-
+      {query ? 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
         {songs.map((track) => (
-          <Card id={track.id} image={track.album.images[0]?.url} name={track.name} artist={track.artists.map(a => a.name).join(', ')} />
-        ))}
-      </div>
+          <Card audio={track.href} id={track.id} image={track.album.images[0]?.url} name={track.name} artist={track.artists.map(a => a.name).join(', ')} />
+        ))} 
+      </div> : <div className="text-center mt-5 text-xl">Please enter the songs name</div>}
     </div>
   );
 }
