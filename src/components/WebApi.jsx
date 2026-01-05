@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 function WebApi({ query, song }) {
     const [accessToken, setAccessToken] = useState("");
-    const CLIENT_ID = '19a666b79d0b4658aba1ac7cce51da8a';
-    const CLIENT_SECRET = '72c641a94d694554a444c83144f6e598';
+    const CLIENT_ID = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
+    const CLIENT_SECRET = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
 
     useEffect(() => {
         const authParameters = {
