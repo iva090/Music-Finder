@@ -1,5 +1,5 @@
 import './App.css';
-import { HashRouter, Route, Routes } from 'react-router-dom'; // Changed to HashRouter
+import { Route, Routes } from 'react-router-dom';
 import Mainpage from './pages/Mainpage';
 import Favorites from './pages/Favorites';
 import Header from './components/headers/Header'
@@ -23,7 +23,6 @@ function App() {
 
   return (
     <FavoritesContext.Provider value={{favorites, addToFavorites, removeFromFavorites}}>
-      <HashRouter>
         <Header />
         <div>
           <Routes>
@@ -31,7 +30,6 @@ function App() {
             <Route path="/favorites" element={<Favorites />} />
           </Routes>
         </div>
-      </HashRouter>
     </FavoritesContext.Provider>
   )
 }
