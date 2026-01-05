@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom'; // Changed to HashRouter
 import Mainpage from './pages/Mainpage';
 import Favorites from './pages/Favorites';
 import Header from './components/headers/Header'
@@ -11,7 +11,7 @@ function App() {
   
   function addToFavorites(song){
     if (favorites.some((sg) => sg.id === song.id)){
-      alert("123")
+      alert("Already in favorites")
     } else {
       setFavorites((prev) => [...prev, song]);
     }
@@ -20,9 +20,10 @@ function App() {
   function removeFromFavorites(id) {
     setFavorites((prev) => prev.filter((song) => song.id !== id));
   }
+
   return (
-    <> 
-      <FavoritesContext.Provider value={{favorites, addToFavorites, removeFromFavorites}}>
+    <FavoritesContext.Provider value={{favorites, addToFavorites, removeFromFavorites}}>
+      <HashRouter>
         <Header />
         <div>
           <Routes>
@@ -30,10 +31,9 @@ function App() {
             <Route path="/favorites" element={<Favorites />} />
           </Routes>
         </div>
-      </FavoritesContext.Provider>
-    </>
-
+      </HashRouter>
+    </FavoritesContext.Provider>
   )
 }
 
-export default App
+export default App;
