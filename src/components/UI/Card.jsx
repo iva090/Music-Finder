@@ -1,12 +1,12 @@
 import { useContext, useState } from "react";
-import { Play, Plus, X } from "lucide-react";
+import { Play, Plus, Trash, X } from "lucide-react";
 import { FavoritesContext } from "../FavoritesContext";
 
 function Card(props) {
   const [showPlayer, setShowPlayer] = useState(false);
-  const showButton = props.showButton;
+  const addOrRemove = props.addOrRemove;
 
-  const addToFavorites = useContext(FavoritesContext)
+  const { addToFavorites, removeFromFavorites } = useContext(FavoritesContext)
 
   const embedUrl = `https://open.spotify.com/embed/track/${props.id}?utm_source=generator&theme=0`;
 
@@ -28,9 +28,11 @@ function Card(props) {
       )}
       <div className="flex justify-between">
         <h3 className="font-bold text-lg truncate text-white">{props.name}</h3>
-        {showButton&& (
+        {addOrRemove ? (
           <button onClick={() => addToFavorites(props)}><Plus /></button>
-        )}
+        ) :
+          <button onClick={() => removeFromFavorites(props.id)}><Trash /></button>
+        }
       </div>
       <p className="text-sm text-gray-400 mb-2">{props.artist}</p>
       

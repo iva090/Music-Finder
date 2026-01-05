@@ -10,11 +10,11 @@ function App() {
   const [favorites, setFavorites] = useState([])
   
   function addToFavorites(song){
-    setFavorites((prev) => {
-      const exists = prev.find((item) => item.id === song.id);
-      if (exists) return prev;
-      return [...prev, song];
-    });
+    if (favorites.some((sg) => sg.id === song.id)){
+      alert("123")
+    } else {
+      setFavorites((prev) => [...prev, song]);
+    }
   };
 
   function removeFromFavorites(id) {
