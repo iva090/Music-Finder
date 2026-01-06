@@ -8,11 +8,8 @@ function Search({ onSearch }) {
     }
 
     return (
-        <div className="input-group grid-cols-[auto_1fr_auto]">
-            <div className="ig-cell preset-tonal">
-                <SearchIcon size={16} />
-            </div>
-            <input className="ig-input" type="text" placeholder="Search..." onChange={handleInputChange}/>
+        <div className="input-group h-10 w-full">
+            <input className="text-xl ig-input text-center" placeholder='Enter a song' type="text" onChange={handleInputChange}/>
         </div>
     )
 }

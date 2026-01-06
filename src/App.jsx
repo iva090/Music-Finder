@@ -2,7 +2,9 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Mainpage from './pages/Mainpage';
 import Favorites from './pages/Favorites';
+import About from './pages/About'
 import Header from './components/headers/Header'
+import Contact from './pages/Contact';
 import { FavoritesContext } from './components/FavoritesContext';
 import { useState } from 'react';
 
@@ -28,6 +30,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Mainpage />} />
             <Route path="/favorites" element={<Favorites />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
     </FavoritesContext.Provider>

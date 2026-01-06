@@ -1,16 +1,35 @@
-import { NavLink } from 'react-router-dom';
-import classes from './Header.module.css'
-function Header(){
-    return (
-        <nav className={classes.nav}>
-            <NavLink to="/" end className={classes.link}>
-                Songs
-            </NavLink>
-            <NavLink to="/favorites" end className={classes.link}>
-                Favorites
-            </NavLink>
-        </nav>
-    )
-}
+import { NavLink } from "react-router";
+import BurgerMenu from "./BurgerMenu";
 
-export default Header;
+export default function Header() {
+  const navLinkClasses = ({ isActive }) =>
+    `px-4 py-2 rounded-lg transition-all duration-300 font-medium ${
+      isActive
+        ? "bg-purple-800 text-white shadow-lg shadow-purple-900/20"
+        : "text-gray-400 hover:text-white hover:bg-[#282828]"
+    }`;
+
+  return (
+    <header className="sticky top-0 z-50 w-full bg-[#121212]/90 backdrop-blur-md border-b border-purple-800/50 px-6 py-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-center relative">
+        <nav className="hidden md:flex items-center gap-2">
+          <NavLink to="/" end className={navLinkClasses}>
+            Songs
+          </NavLink>
+          <NavLink to="/favorites" end className={navLinkClasses}>
+            Favorites
+          </NavLink>
+          <NavLink to="/contact" end className={navLinkClasses}>
+            Contact Us
+          </NavLink>
+          <NavLink to="/about" end className={navLinkClasses}>
+            About
+          </NavLink>
+        </nav>
+        <div className="md:hidden absolute">
+          <BurgerMenu />
+        </div>
+      </div>
+    </header>
+  );
+}
