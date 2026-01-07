@@ -10,11 +10,8 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [favorites, setFavorites] = useState(() => {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("favoriteSongs");
-      return saved ? JSON.parse(saved) : [];
-    }
-    return [];
+    const saved = localStorage.getItem("favoriteSongs");
+    return saved ? JSON.parse(saved) : [];
   });
 
   useEffect(() => {

@@ -10,7 +10,7 @@ export default function Header() {
     }`;
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#121212]/90 backdrop-blur-md border-b border-purple-800/50 px-6 py-4">
+    <header className="sticky top-0 z-[100] w-full bg-[#121212]/90 backdrop-blur-md border-b border-purple-800/50 px-6 py-4">
       <div className="max-w-7xl mx-auto flex items-center justify-center relative">
         <nav className="hidden md:flex items-center gap-2">
           <NavLink to="/" end className={navLinkClasses}>
@@ -26,7 +26,7 @@ export default function Header() {
             About
           </NavLink>
         </nav>
-        <div className="md:hidden absolute">
+        <div className="md:hidden absolute sticky">
           <BurgerMenu />
         </div>
       </div>

@@ -10,7 +10,7 @@ function Mainpage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <div className="top-0 z-50 bg-black/95 backdrop-blur-sm">
+      <div className="z-50 bg-black/95 backdrop-blur-sm">
         <Search onSearch={setQuery} />
         <p className="bg-[#1a1a1a] text-sm md:text-base text-gray-400 text-center py-2 border-b border-white/10">
           {query ? `Showing ${songs.length} results` : "_"}

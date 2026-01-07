@@ -8,7 +8,7 @@ function Search({ onSearch }) {
     }
 
     return (
-        <div className="input-group h-10 w-full">
+        <div className="sticky input-group h-10 w-full">
             <input className="text-xl ig-input text-center" placeholder='Enter a song' type="text" onChange={handleInputChange}/>
         </div>
     )
