@@ -1,16 +1,23 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Mainpage from './pages/Mainpage';
-import Favorites from './pages/Favorites';
+import Favorites from './pages/favorites';
 import About from './pages/About'
 import Header from './components/headers/Header'
 import Contact from './pages/Contact';
 import { FavoritesContext } from './components/FavoritesContext';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
-  const [favorites, setFavorites] = useState([])
-  
+  const [favorites, setFavorites] = useState(() => {
+    const saved = localStorage.getItem('favoriteSongs');
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('favoriteSongs', JSON.stringify(favorites));
+  }, [favorites]);
+
   function addToFavorites(song){
     if (favorites.some((sg) => sg.id === song.id)){
       alert("Already in favorites")

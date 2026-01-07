@@ -12,7 +12,7 @@ function Card(props) {
   const embedUrl = `https://open.spotify.com/embed/track/${props.id}?utm_source=generator&theme=0`;
 
   return (
-    <div className="p-5 bg-[#181818] border border-purple-800 rounded-xl hover:bg-[#282828] transition-all relative group">
+    <div className="p-5 bg-[#080b24] border border-[#330994] rounded-xl hover:bg-[#282828] transition-all relative group">
       <img
         src={props.image}
         alt={props.name}

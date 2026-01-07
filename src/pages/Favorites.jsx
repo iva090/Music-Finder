@@ -4,10 +4,10 @@ import Card from "../components/UI/Card";
 
 function Favorites() {
   const { favorites } = useContext(FavoritesContext);
-  console.log(favorites);
+
 
   return (
-    <div className="p-8">
+    <div className="p-8 bg-black text-white h-screen">
       <h1 className="text-2xl font-bold text-white mb-6">Your Favorites</h1>
       {favorites.length === 0 ? (
         <p className="text-gray-400">No favorite songs yet!</p>
