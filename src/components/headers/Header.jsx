@@ -1,5 +1,6 @@
 import { NavLink } from "react-router";
 import BurgerMenu from "./BurgerMenu";
+import Logo from "../../images/Logo.png";
 
 export default function Header() {
   const navLinkClasses = ({ isActive }) =>
@@ -19,6 +20,7 @@ export default function Header() {
           <NavLink to="/favorites" end className={navLinkClasses}>
             Favorites
           </NavLink>
+          <img src={Logo} className="h-10 items-left" />
           <NavLink to="/contact" end className={navLinkClasses}>
             Contact Us
           </NavLink>

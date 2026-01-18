@@ -7,6 +7,7 @@ import Header from "./components/headers/Header";
 import Contact from "./pages/Contact";
 import { FavoritesContext } from "./components/FavoritesContext";
 import { useEffect, useState } from "react";
+import GoToTop from "./components/GoToTop";
 
 function App() {
   const [favorites, setFavorites] = useState(() => {
@@ -43,6 +44,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
+      <GoToTop />
     </FavoritesContext.Provider>
   );
 }

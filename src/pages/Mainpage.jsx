@@ -9,6 +9,7 @@ function Mainpage() {
   console.log(songs);
 
   return (
+    
     <div className="min-h-screen bg-black text-white">
       <div className="z-50 bg-black/95 backdrop-blur-sm">
         <Search onSearch={setQuery} />

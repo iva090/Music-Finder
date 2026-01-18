@@ -7,7 +7,7 @@ function Favorites() {
 
 
   return (
-    <div className="p-8 bg-black text-white h-screen">
+    <div className="p-8 min-h-screen bg-black">
       <h1 className="text-2xl font-bold text-white mb-6">Your Favorites</h1>
       {favorites.length === 0 ? (
         <p className="text-gray-400">No favorite songs yet!</p>
